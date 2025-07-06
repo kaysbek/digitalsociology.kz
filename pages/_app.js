@@ -1,19 +1,14 @@
+// pages/_app.js
+import '@/styles/globals.css'
+import Navbar from '@/components/Navbar'
 
-"use client";
-import '../styles/globals.css'
-import {useEffect,useState} from 'react'
-
-export default function MyApp({Component,pageProps}){
-  const [theme,setTheme] = useState('light')
-  useEffect(()=>{ document.documentElement.classList.toggle('dark',theme==='dark')},[theme])
-  if(typeof window==='undefined') return null
-  return(
+export default function App({ Component, pageProps }) {
+  return (
     <>
-      <button onClick={()=>setTheme(t=>t==='light'?'dark':'light')}
-        className="fixed top-5 right-5 z-50 bg-white/80 dark:bg-gray-700/80 px-4 py-2 rounded">
-        {theme==='light'?'Dark':'Light'} mode
-      </button>
-      <Component {...pageProps}/>
+      <Navbar />
+      <main className="pt-20">
+        <Component {...pageProps} />
+      </main>
     </>
   )
 }
