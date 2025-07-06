@@ -1,1 +1,0 @@
-# digitalsociology.kz

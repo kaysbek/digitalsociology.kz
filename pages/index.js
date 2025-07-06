@@ -1,17 +1,13 @@
 
-import { motion } from 'framer-motion';
-
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-700 text-white">
-      <motion.h1 initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}
-        className="text-4xl md:text-6xl font-bold mb-6">
-        Digital Sociology Kazakhstan
-      </motion.h1>
-      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}
-        className="text-xl text-center max-w-xl">
-        A platform for research, data visualization, and insight into Kazakhstan’s digital society.
-      </motion.p>
+    <main className="min-h-screen bg-gradient-to-br from-[#48b1f3] via-[#8b8ede] to-[#d17ee1] text-gray-900 dark:text-gray-100 dark:from-[#1e1e2f] dark:via-[#2b2b45] dark:to-[#3a3a5c] transition-all duration-700">
+      <div className="flex flex-col items-center justify-center py-24 px-6">
+        <h1 className="text-4xl font-bold mb-4">Digital Sociology Kazakhstan</h1>
+        <p className="text-lg text-center max-w-2xl">
+          A platform for research, data visualization, and insight into Kazakhstan’s digital society.
+        </p>
+      </div>
     </main>
   );
 }
