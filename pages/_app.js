@@ -1,25 +1,19 @@
 
+"use client";
 import '../styles/globals.css'
-import { useEffect, useState } from 'react'
+import {useEffect,useState} from 'react'
 
-function MyApp({ Component, pageProps }) {
-  const [dark, setDark] = useState(false)
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark)
-  }, [dark])
-
-  return (
+export default function MyApp({Component,pageProps}){
+  const [theme,setTheme] = useState('light')
+  useEffect(()=>{ document.documentElement.classList.toggle('dark',theme==='dark')},[theme])
+  if(typeof window==='undefined') return null
+  return(
     <>
-      <button 
-        onClick={() => setDark(!dark)} 
-        className="fixed top-4 right-4 z-50 bg-white dark:bg-gray-800 text-black dark:text-white border px-4 py-2 rounded"
-      >
-        Toggle Theme
+      <button onClick={()=>setTheme(t=>t==='light'?'dark':'light')}
+        className="fixed top-5 right-5 z-50 bg-white/80 dark:bg-gray-700/80 px-4 py-2 rounded">
+        {theme==='light'?'Dark':'Light'} mode
       </button>
-      <Component {...pageProps} />
+      <Component {...pageProps}/>
     </>
   )
 }
-
-export default MyApp
