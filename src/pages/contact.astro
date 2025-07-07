@@ -1,0 +1,565 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact - Digital Sociology">
+	<Header />
+	<main>
+		<section class="page-header">
+			<div class="container">
+				<h1 class="page-title">Contact Us</h1>
+				<p class="page-subtitle">
+					Get in touch with our research team for collaborations, inquiries, or feedback
+				</p>
+			</div>
+		</section>
+
+		<section class="contact-content">
+			<div class="container">
+				<div class="contact-grid">
+					<div class="contact-info">
+						<h2>Get in Touch</h2>
+						<p class="contact-description">
+							We welcome inquiries from researchers, institutions, media, and anyone interested 
+							in our work. Whether you're looking to collaborate, need information about our 
+							research, or want to discuss digital sociology topics, we'd love to hear from you.
+						</p>
+
+						<div class="contact-methods">
+							<div class="contact-method">
+								<div class="method-icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+										<polyline points="22,6 12,13 2,6"/>
+									</svg>
+								</div>
+								<div class="method-content">
+									<h3>Email</h3>
+									<p>research@digitalsociology.org</p>
+									<p class="method-note">For general inquiries and research questions</p>
+								</div>
+							</div>
+
+							<div class="contact-method">
+								<div class="method-icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+									</svg>
+								</div>
+								<div class="method-content">
+									<h3>Phone</h3>
+									<p>+1 (555) 123-4567</p>
+									<p class="method-note">Available Monday-Friday, 9 AM - 5 PM EST</p>
+								</div>
+							</div>
+
+							<div class="contact-method">
+								<div class="method-icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+										<circle cx="12" cy="10" r="3"/>
+									</svg>
+								</div>
+								<div class="method-content">
+									<h3>Address</h3>
+									<p>Digital Sociology Research Center<br>
+									University Campus, Building A<br>
+									123 Academic Way<br>
+									Research City, RC 12345</p>
+								</div>
+							</div>
+
+							<div class="contact-method">
+								<div class="method-icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+										<line x1="8" y1="21" x2="16" y2="21"/>
+										<line x1="12" y1="17" x2="12" y2="21"/>
+									</svg>
+								</div>
+								<div class="method-content">
+									<h3>Office Hours</h3>
+									<p>Monday - Friday: 9:00 AM - 5:00 PM<br>
+									Saturday: 10:00 AM - 2:00 PM<br>
+									Sunday: Closed</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="contact-form-section">
+						<div class="form-container">
+							<h2>Send us a Message</h2>
+							<form class="contact-form" id="contactForm">
+								<div class="form-group">
+									<label for="name">Full Name *</label>
+									<input type="text" id="name" name="name" required>
+								</div>
+
+								<div class="form-group">
+									<label for="email">Email Address *</label>
+									<input type="email" id="email" name="email" required>
+								</div>
+
+								<div class="form-group">
+									<label for="organization">Organization/Institution</label>
+									<input type="text" id="organization" name="organization">
+								</div>
+
+								<div class="form-group">
+									<label for="subject">Subject *</label>
+									<select id="subject" name="subject" required>
+										<option value="">Select a subject</option>
+										<option value="research-collaboration">Research Collaboration</option>
+										<option value="media-inquiry">Media Inquiry</option>
+										<option value="academic-partnership">Academic Partnership</option>
+										<option value="data-request">Data Request</option>
+										<option value="speaking-engagement">Speaking Engagement</option>
+										<option value="general-inquiry">General Inquiry</option>
+										<option value="other">Other</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="message">Message *</label>
+									<textarea id="message" name="message" rows="6" required placeholder="Please provide details about your inquiry..."></textarea>
+								</div>
+
+								<div class="form-group checkbox-group">
+									<input type="checkbox" id="newsletter" name="newsletter">
+									<label for="newsletter">
+										I would like to receive updates about new research and publications
+									</label>
+								</div>
+
+								<button type="submit" class="btn btn-primary submit-btn">
+									<span class="btn-text">Send Message</span>
+									<span class="btn-loading" style="display: none;">
+										<svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+											<path d="M21 12a9 9 0 11-6.219-8.56"/>
+										</svg>
+										Sending...
+									</span>
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="faq-section">
+			<div class="container">
+				<h2 class="section-title">Frequently Asked Questions</h2>
+				<div class="faq-grid">
+					<div class="faq-item">
+						<button class="faq-question" data-faq="1">
+							<span>How can I collaborate with your research team?</span>
+							<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<polyline points="6,9 12,15 18,9"/>
+							</svg>
+						</button>
+						<div class="faq-answer" id="faq-1">
+							<p>We welcome collaborations with researchers, institutions, and organizations. Please reach out via email with details about your proposed collaboration, including your research interests, expertise, and potential contribution to our ongoing projects.</p>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<button class="faq-question" data-faq="2">
+							<span>Can I access your research data?</span>
+							<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<polyline points="6,9 12,15 18,9"/>
+							</svg>
+						</button>
+						<div class="faq-answer" id="faq-2">
+							<p>Some of our research data is available for academic use under specific conditions. Please contact us with details about your research project and data requirements. We'll review your request and provide information about data availability and access procedures.</p>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<button class="faq-question" data-faq="3">
+							<span>Do you offer speaking engagements?</span>
+							<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<polyline points="6,9 12,15 18,9"/>
+							</svg>
+						</button>
+						<div class="faq-answer" id="faq-3">
+							<p>Yes, our team members are available for speaking engagements at conferences, workshops, and other events. Please provide details about your event, including date, location, audience, and specific topics you'd like us to address.</p>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<button class="faq-question" data-faq="4">
+							<span>How can I cite your research?</span>
+							<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<polyline points="6,9 12,15 18,9"/>
+							</svg>
+						</button>
+						<div class="faq-answer" id="faq-4">
+							<p>Each research article includes proper citation information. For general citation of our work, please use the format provided on individual research pages. If you need specific citation assistance, please contact us.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.page-header {
+		padding: calc(80px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+		text-align: center;
+		background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+	}
+
+	.page-title {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-md);
+		background: linear-gradient(45deg, var(--color-accent), var(--color-warning));
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.page-subtitle {
+		font-size: 1.25rem;
+		color: var(--color-text-muted);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.contact-content {
+		padding: var(--spacing-3xl) 0;
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-3xl);
+		align-items: flex-start;
+	}
+
+	.contact-info h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.contact-description {
+		font-size: 1.125rem;
+		color: var(--color-text-muted);
+		line-height: 1.6;
+		margin-bottom: var(--spacing-2xl);
+	}
+
+	.contact-methods {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-lg);
+	}
+
+	.contact-method {
+		display: flex;
+		gap: var(--spacing-md);
+		padding: var(--spacing-lg);
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		backdrop-filter: blur(8px);
+	}
+
+	.method-icon {
+		flex-shrink: 0;
+		width: 48px;
+		height: 48px;
+		background: var(--color-primary);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+
+	.method-content h3 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.method-content p {
+		color: var(--color-text-muted);
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.method-note {
+		font-size: 0.875rem;
+		color: var(--color-text-muted);
+		opacity: 0.8;
+	}
+
+	.form-container {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		padding: var(--spacing-2xl);
+		backdrop-filter: blur(8px);
+	}
+
+	.form-container h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-xs);
+	}
+
+	.form-group label {
+		font-weight: 500;
+		color: var(--color-text);
+		font-size: 0.875rem;
+	}
+
+	.form-group input,
+	.form-group select,
+	.form-group textarea {
+		padding: var(--spacing-sm) var(--spacing-md);
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		color: var(--color-text);
+		font-size: 0.875rem;
+		transition: all 0.2s ease;
+	}
+
+	.form-group input:focus,
+	.form-group select:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: var(--color-primary);
+		box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+	}
+
+	.form-group input::placeholder,
+	.form-group textarea::placeholder {
+		color: var(--color-text-muted);
+	}
+
+	.checkbox-group {
+		flex-direction: row;
+		align-items: center;
+		gap: var(--spacing-sm);
+	}
+
+	.checkbox-group input[type="checkbox"] {
+		width: auto;
+		margin: 0;
+	}
+
+	.checkbox-group label {
+		margin: 0;
+		font-size: 0.875rem;
+		color: var(--color-text-muted);
+	}
+
+	.submit-btn {
+		width: 100%;
+		justify-content: center;
+		padding: var(--spacing-md);
+		font-size: 1rem;
+		margin-top: var(--spacing-md);
+	}
+
+	.btn-loading {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-sm);
+	}
+
+	.spinner {
+		animation: spin 1s linear infinite;
+	}
+
+	@keyframes spin {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+	}
+
+	.faq-section {
+		padding: var(--spacing-3xl) 0;
+		background: rgba(30, 41, 59, 0.3);
+	}
+
+	.faq-grid {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.faq-item {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		backdrop-filter: blur(8px);
+		overflow: hidden;
+	}
+
+	.faq-question {
+		width: 100%;
+		padding: var(--spacing-lg);
+		background: none;
+		border: none;
+		color: var(--color-text);
+		font-size: 1.125rem;
+		font-weight: 500;
+		text-align: left;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: all 0.2s ease;
+	}
+
+	.faq-question:hover {
+		background: rgba(255, 255, 255, 0.05);
+	}
+
+	.faq-icon {
+		transition: transform 0.2s ease;
+	}
+
+	.faq-question.active .faq-icon {
+		transform: rotate(180deg);
+	}
+
+	.faq-answer {
+		padding: 0 var(--spacing-lg);
+		max-height: 0;
+		overflow: hidden;
+		transition: all 0.3s ease;
+	}
+
+	.faq-answer.active {
+		max-height: 200px;
+		padding: 0 var(--spacing-lg) var(--spacing-lg);
+	}
+
+	.faq-answer p {
+		color: var(--color-text-muted);
+		line-height: 1.6;
+	}
+
+	@media (max-width: 1024px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+			gap: var(--spacing-2xl);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.page-title {
+			font-size: 2rem;
+		}
+
+		.contact-method {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.form-container {
+			padding: var(--spacing-lg);
+		}
+
+		.faq-question {
+			font-size: 1rem;
+			padding: var(--spacing-md);
+		}
+
+		.faq-answer {
+			padding: 0 var(--spacing-md);
+		}
+
+		.faq-answer.active {
+			padding: 0 var(--spacing-md) var(--spacing-md);
+		}
+	}
+</style>
+
+<script>
+	// FAQ functionality
+	document.addEventListener('DOMContentLoaded', () => {
+		const faqQuestions = document.querySelectorAll('.faq-question');
+		
+		faqQuestions.forEach(question => {
+			question.addEventListener('click', () => {
+				const faqId = question.dataset.faq;
+				const answer = document.getElementById(`faq-${faqId}`);
+				
+				// Toggle current FAQ
+				question.classList.toggle('active');
+				answer.classList.toggle('active');
+				
+				// Close other FAQs
+				faqQuestions.forEach(otherQuestion => {
+					if (otherQuestion !== question) {
+						otherQuestion.classList.remove('active');
+						const otherFaqId = otherQuestion.dataset.faq;
+						const otherAnswer = document.getElementById(`faq-${otherFaqId}`);
+						otherAnswer.classList.remove('active');
+					}
+				});
+			});
+		});
+	});
+
+	// Form submission
+	document.addEventListener('DOMContentLoaded', () => {
+		const form = document.getElementById('contactForm');
+		const submitBtn = form.querySelector('.submit-btn');
+		const btnText = submitBtn.querySelector('.btn-text');
+		const btnLoading = submitBtn.querySelector('.btn-loading');
+		
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			
+			// Show loading state
+			btnText.style.display = 'none';
+			btnLoading.style.display = 'flex';
+			submitBtn.disabled = true;
+			
+			// Simulate form submission
+			setTimeout(() => {
+				// Reset form
+				form.reset();
+				
+				// Reset button state
+				btnText.style.display = 'block';
+				btnLoading.style.display = 'none';
+				submitBtn.disabled = false;
+				
+				// Show success message (you can implement a proper notification system)
+				alert('Thank you for your message! We will get back to you soon.');
+			}, 2000);
+		});
+	});
+</script>
+</Layout>

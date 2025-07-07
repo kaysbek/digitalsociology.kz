@@ -1,0 +1,537 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const categories = [
+	'All',
+	'Digital Culture',
+	'Social Media',
+	'Technology & Society',
+	'Data Analytics',
+	'Digital Identity',
+	'Privacy & Ethics'
+];
+
+const articles = [
+	{
+		title: "The Impact of AI on Social Structures",
+		excerpt: "Exploring how artificial intelligence is reshaping traditional social hierarchies and creating new forms of digital inequality.",
+		category: "Digital Culture",
+		readTime: "8 min read",
+		date: "Dec 15, 2024",
+		author: "Dr. Sarah Chen",
+		featured: true
+	},
+	{
+		title: "Social Media and Political Discourse",
+		excerpt: "Analyzing the role of social platforms in shaping contemporary political conversations and democratic processes.",
+		category: "Social Media",
+		readTime: "12 min read",
+		date: "Dec 10, 2024",
+		author: "Prof. Michael Rodriguez",
+		featured: false
+	},
+	{
+		title: "Digital Privacy in the Age of Surveillance",
+		excerpt: "Examining the tension between technological convenience and personal privacy in modern digital ecosystems.",
+		category: "Technology & Society",
+		readTime: "10 min read",
+		date: "Dec 5, 2024",
+		author: "Dr. Emma Thompson",
+		featured: false
+	},
+	{
+		title: "Virtual Communities and Real Connections",
+		excerpt: "Understanding how online communities foster genuine relationships and social bonds in the digital age.",
+		category: "Digital Culture",
+		readTime: "15 min read",
+		date: "Nov 28, 2024",
+		author: "Dr. James Wilson",
+		featured: false
+	},
+	{
+		title: "Data Analytics and Social Behavior",
+		excerpt: "Leveraging big data to understand patterns in human behavior and social interactions.",
+		category: "Data Analytics",
+		readTime: "9 min read",
+		date: "Nov 22, 2024",
+		author: "Prof. Lisa Park",
+		featured: false
+	},
+	{
+		title: "Digital Identity Formation in Virtual Spaces",
+		excerpt: "How individuals construct and maintain their identities across various digital platforms and virtual environments.",
+		category: "Digital Identity",
+		readTime: "11 min read",
+		date: "Nov 15, 2024",
+		author: "Dr. Alex Morgan",
+		featured: false
+	}
+];
+---
+
+<Layout title="Research & Articles - Digital Sociology">
+	<Header />
+	<main>
+		<section class="page-header">
+			<div class="container">
+				<h1 class="page-title">Research & Articles</h1>
+				<p class="page-subtitle">
+					Comprehensive analysis of digital phenomena and their impact on society
+				</p>
+			</div>
+		</section>
+
+		<section class="research-content">
+			<div class="container">
+				<div class="research-filters">
+					<div class="filter-group">
+						<h3>Filter by Category</h3>
+						<div class="filter-buttons">
+							{categories.map((category) => (
+								<button class={`filter-btn ${category === 'All' ? 'active' : ''}`} data-category={category}>
+									{category}
+								</button>
+							))}
+						</div>
+					</div>
+
+					<div class="search-box">
+						<input type="text" placeholder="Search articles..." class="search-input">
+						<svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<circle cx="11" cy="11" r="8"/>
+							<path d="m21 21-4.35-4.35"/>
+						</svg>
+					</div>
+				</div>
+
+				<div class="articles-grid">
+					{articles.map((article) => (
+						<article class={`article-card ${article.featured ? 'featured' : ''}`} data-category={article.category}>
+							<div class="article-header">
+								<div class="article-category">{article.category}</div>
+								{article.featured && <div class="featured-badge">Featured</div>}
+							</div>
+							
+							<div class="article-content">
+								<h2 class="article-title">{article.title}</h2>
+								<p class="article-excerpt">{article.excerpt}</p>
+								
+								<div class="article-meta">
+									<div class="author-info">
+										<span class="author-name">{article.author}</span>
+										<span class="article-date">{article.date}</span>
+									</div>
+									<span class="read-time">{article.readTime}</span>
+								</div>
+							</div>
+							
+							<div class="article-footer">
+								<a href="#" class="read-more">
+									Read Full Article
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M5 12h14M12 5l7 7-7 7"/>
+									</svg>
+								</a>
+							</div>
+						</article>
+					))}
+				</div>
+
+				<div class="pagination">
+					<button class="pagination-btn" disabled>
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M15 18l-6-6 6-6"/>
+						</svg>
+						Previous
+					</button>
+					
+					<div class="pagination-numbers">
+						<button class="pagination-number active">1</button>
+						<button class="pagination-number">2</button>
+						<button class="pagination-number">3</button>
+						<span class="pagination-ellipsis">...</span>
+						<button class="pagination-number">8</button>
+					</div>
+					
+					<button class="pagination-btn">
+						Next
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M9 18l6-6-6-6"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.page-header {
+		padding: calc(80px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+		text-align: center;
+		background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+	}
+
+	.page-title {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-md);
+		background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.page-subtitle {
+		font-size: 1.25rem;
+		color: var(--color-text-muted);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.research-content {
+		padding: var(--spacing-3xl) 0;
+	}
+
+	.research-filters {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: var(--spacing-2xl);
+		gap: var(--spacing-lg);
+	}
+
+	.filter-group h3 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.filter-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-sm);
+	}
+
+	.filter-btn {
+		padding: var(--spacing-sm) var(--spacing-md);
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		color: var(--color-text-muted);
+		font-size: 0.875rem;
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.filter-btn:hover,
+	.filter-btn.active {
+		background: var(--color-primary);
+		color: white;
+		border-color: var(--color-primary);
+	}
+
+	.search-box {
+		position: relative;
+		width: 300px;
+	}
+
+	.search-input {
+		width: 100%;
+		padding: var(--spacing-sm) var(--spacing-md);
+		padding-right: 40px;
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		color: var(--color-text);
+		font-size: 0.875rem;
+	}
+
+	.search-input::placeholder {
+		color: var(--color-text-muted);
+	}
+
+	.search-input:focus {
+		outline: none;
+		border-color: var(--color-primary);
+		box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+	}
+
+	.search-icon {
+		position: absolute;
+		right: 12px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--color-text-muted);
+	}
+
+	.articles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: var(--spacing-lg);
+		margin-bottom: var(--spacing-2xl);
+	}
+
+	.article-card {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		padding: var(--spacing-lg);
+		backdrop-filter: blur(8px);
+		transition: all 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.article-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-xl);
+		border-color: var(--color-primary);
+	}
+
+	.article-card.featured {
+		border-color: var(--color-primary);
+		background: rgba(59, 130, 246, 0.1);
+	}
+
+	.article-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.article-category {
+		background: rgba(59, 130, 246, 0.2);
+		color: var(--color-primary);
+		padding: var(--spacing-xs) var(--spacing-sm);
+		border-radius: 16px;
+		font-size: 0.75rem;
+		font-weight: 500;
+	}
+
+	.featured-badge {
+		background: var(--color-accent);
+		color: white;
+		padding: var(--spacing-xs) var(--spacing-sm);
+		border-radius: 16px;
+		font-size: 0.75rem;
+		font-weight: 500;
+	}
+
+	.article-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.article-title {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-text);
+		line-height: 1.3;
+	}
+
+	.article-excerpt {
+		color: var(--color-text-muted);
+		line-height: 1.6;
+		flex: 1;
+	}
+
+	.article-meta {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 0.875rem;
+		color: var(--color-text-muted);
+	}
+
+	.author-info {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-xs);
+	}
+
+	.author-name {
+		font-weight: 500;
+		color: var(--color-text);
+	}
+
+	.read-time {
+		font-weight: 500;
+	}
+
+	.article-footer {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.read-more {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-xs);
+		color: var(--color-primary);
+		text-decoration: none;
+		font-weight: 500;
+		transition: all 0.2s ease;
+	}
+
+	.read-more:hover {
+		color: var(--color-secondary);
+		transform: translateX(4px);
+	}
+
+	.pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: var(--spacing-md);
+	}
+
+	.pagination-btn {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-xs);
+		padding: var(--spacing-sm) var(--spacing-md);
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		color: var(--color-text);
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.pagination-btn:hover:not(:disabled) {
+		background: var(--color-primary);
+		border-color: var(--color-primary);
+	}
+
+	.pagination-btn:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	.pagination-numbers {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-xs);
+	}
+
+	.pagination-number {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		color: var(--color-text);
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.pagination-number:hover,
+	.pagination-number.active {
+		background: var(--color-primary);
+		border-color: var(--color-primary);
+		color: white;
+	}
+
+	.pagination-ellipsis {
+		color: var(--color-text-muted);
+		padding: 0 var(--spacing-sm);
+	}
+
+	@media (max-width: 1024px) {
+		.research-filters {
+			flex-direction: column;
+			gap: var(--spacing-lg);
+		}
+
+		.search-box {
+			width: 100%;
+		}
+
+		.filter-buttons {
+			justify-content: center;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.page-title {
+			font-size: 2rem;
+		}
+
+		.articles-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.article-meta {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: var(--spacing-xs);
+		}
+
+		.pagination {
+			flex-direction: column;
+			gap: var(--spacing-md);
+		}
+
+		.pagination-numbers {
+			order: -1;
+		}
+	}
+</style>
+
+<script>
+	// Filter functionality
+	const filterButtons = document.querySelectorAll('.filter-btn');
+	const articleCards = document.querySelectorAll('.article-card');
+
+	filterButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			const category = button.dataset.category;
+			
+			// Update active filter button
+			filterButtons.forEach(btn => btn.classList.remove('active'));
+			button.classList.add('active');
+			
+			// Filter articles
+			articleCards.forEach(card => {
+				const cardCategory = card.dataset.category;
+				if (category === 'All' || cardCategory === category) {
+					card.style.display = 'flex';
+				} else {
+					card.style.display = 'none';
+				}
+			});
+		});
+	});
+
+	// Search functionality
+	const searchInput = document.querySelector('.search-input');
+	if (searchInput) {
+		searchInput.addEventListener('input', (e) => {
+			const searchTerm = e.target.value.toLowerCase();
+			
+			articleCards.forEach(card => {
+				const title = card.querySelector('.article-title').textContent.toLowerCase();
+				const excerpt = card.querySelector('.article-excerpt').textContent.toLowerCase();
+				
+				if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+					card.style.display = 'flex';
+				} else {
+					card.style.display = 'none';
+				}
+			});
+		});
+	}
+</script>
+</Layout>

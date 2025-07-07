@@ -1,0 +1,528 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const teamMembers = [
+	{
+		name: "Dr. Sarah Chen",
+		role: "Principal Investigator",
+		expertise: "Digital Culture & AI Ethics",
+		bio: "Leading researcher in digital sociology with over 15 years of experience studying the intersection of technology and society.",
+		image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400"
+	},
+	{
+		name: "Prof. Michael Rodriguez",
+		role: "Senior Research Fellow",
+		expertise: "Social Media & Political Discourse",
+		bio: "Expert in analyzing political communication on social media platforms and their impact on democratic processes.",
+		image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400"
+	},
+	{
+		name: "Dr. Emma Thompson",
+		role: "Research Associate",
+		expertise: "Digital Privacy & Ethics",
+		bio: "Specialist in digital privacy, data protection, and the ethical implications of emerging technologies.",
+		image: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=400"
+	},
+	{
+		name: "Dr. James Wilson",
+		role: "Data Analyst",
+		expertise: "Computational Social Science",
+		bio: "Expert in big data analysis and computational methods for understanding social phenomena.",
+		image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400"
+	}
+];
+
+const milestones = [
+	{
+		year: "2020",
+		title: "Project Launch",
+		description: "Digital Sociology Research Project officially launched with initial funding."
+	},
+	{
+		year: "2021",
+		title: "First Major Publication",
+		description: "Published groundbreaking research on social media's impact on political discourse."
+	},
+	{
+		year: "2022",
+		title: "International Recognition",
+		description: "Received the Excellence in Digital Research Award from the International Sociology Association."
+	},
+	{
+		year: "2023",
+		title: "Research Expansion",
+		description: "Expanded research scope to include AI ethics and digital identity studies."
+	},
+	{
+		year: "2024",
+		title: "Current Focus",
+		description: "Leading initiatives in computational social science and digital transformation studies."
+	}
+];
+---
+
+<Layout title="About - Digital Sociology">
+	<Header />
+	<main>
+		<section class="page-header">
+			<div class="container">
+				<h1 class="page-title">About the Project</h1>
+				<p class="page-subtitle">
+					Understanding the digital transformation of society through rigorous research and analysis
+				</p>
+			</div>
+		</section>
+
+		<section class="mission-section">
+			<div class="container">
+				<div class="mission-grid">
+					<div class="mission-content">
+						<h2 class="section-title">Our Mission</h2>
+						<p class="mission-text">
+							The Digital Sociology Research Project is dedicated to exploring the complex relationships 
+							between technology and society in the 21st century. We investigate how digital innovations 
+							reshape social structures, influence human behavior, and create new forms of social interaction.
+						</p>
+						<p class="mission-text">
+							Through interdisciplinary research, we aim to provide insights that inform policy decisions, 
+							guide technological development, and help society navigate the challenges and opportunities 
+							of digital transformation.
+						</p>
+						<div class="mission-values">
+							<div class="value-item">
+								<h3>🔬 Rigorous Research</h3>
+								<p>Evidence-based analysis using cutting-edge methodologies</p>
+							</div>
+							<div class="value-item">
+								<h3>🌐 Global Perspective</h3>
+								<p>International collaboration and cross-cultural insights</p>
+							</div>
+							<div class="value-item">
+								<h3>📊 Data-Driven</h3>
+								<p>Leveraging big data and computational methods</p>
+							</div>
+							<div class="value-item">
+								<h3>🤝 Social Impact</h3>
+								<p>Research that makes a difference in people's lives</p>
+							</div>
+						</div>
+					</div>
+					<div class="mission-visual">
+						<div class="visual-card">
+							<img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Research team collaboration" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="team-section">
+			<div class="container">
+				<h2 class="section-title">Our Team</h2>
+				<p class="section-subtitle">
+					Meet the researchers driving innovation in digital sociology
+				</p>
+				<div class="team-grid">
+					{teamMembers.map((member) => (
+						<div class="team-card">
+							<div class="team-image">
+								<img src={member.image} alt={member.name} />
+							</div>
+							<div class="team-content">
+								<h3 class="team-name">{member.name}</h3>
+								<p class="team-role">{member.role}</p>
+								<p class="team-expertise">{member.expertise}</p>
+								<p class="team-bio">{member.bio}</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section class="timeline-section">
+			<div class="container">
+				<h2 class="section-title">Our Journey</h2>
+				<p class="section-subtitle">
+					Key milestones in our research and development
+				</p>
+				<div class="timeline">
+					{milestones.map((milestone, index) => (
+						<div class="timeline-item">
+							<div class="timeline-marker">
+								<span class="timeline-year">{milestone.year}</span>
+							</div>
+							<div class="timeline-content">
+								<h3 class="timeline-title">{milestone.title}</h3>
+								<p class="timeline-description">{milestone.description}</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section class="collaboration-section">
+			<div class="container">
+				<div class="collaboration-card">
+					<h2>Collaborate With Us</h2>
+					<p>
+						We welcome partnerships with academic institutions, research organizations, 
+						and industry leaders who share our commitment to understanding digital society.
+					</p>
+					<div class="collaboration-actions">
+						<a href="/contact" class="btn btn-primary">
+							Get in Touch
+						</a>
+						<a href="/resources" class="btn btn-secondary">
+							View Resources
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.page-header {
+		padding: calc(80px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+		text-align: center;
+		background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+	}
+
+	.page-title {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-md);
+		background: linear-gradient(45deg, var(--color-success), var(--color-primary));
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.page-subtitle {
+		font-size: 1.25rem;
+		color: var(--color-text-muted);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.mission-section {
+		padding: var(--spacing-3xl) 0;
+	}
+
+	.mission-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-3xl);
+		align-items: center;
+	}
+
+	.mission-content .section-title {
+		text-align: left;
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.mission-text {
+		font-size: 1.125rem;
+		color: var(--color-text-muted);
+		line-height: 1.7;
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.mission-values {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-2xl);
+	}
+
+	.value-item {
+		text-align: center;
+	}
+
+	.value-item h3 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.value-item p {
+		font-size: 0.875rem;
+		color: var(--color-text-muted);
+		line-height: 1.5;
+	}
+
+	.mission-visual {
+		display: flex;
+		justify-content: center;
+	}
+
+	.visual-card {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		padding: var(--spacing-md);
+		backdrop-filter: blur(8px);
+		transform: rotate(-2deg);
+		transition: transform 0.3s ease;
+	}
+
+	.visual-card:hover {
+		transform: rotate(0deg) scale(1.05);
+	}
+
+	.visual-card img {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+		border-radius: var(--border-radius);
+	}
+
+	.team-section {
+		padding: var(--spacing-3xl) 0;
+		background: rgba(30, 41, 59, 0.3);
+	}
+
+	.team-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: var(--spacing-lg);
+	}
+
+	.team-card {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		padding: var(--spacing-lg);
+		text-align: center;
+		backdrop-filter: blur(8px);
+		transition: all 0.3s ease;
+	}
+
+	.team-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-xl);
+		border-color: var(--color-primary);
+	}
+
+	.team-image {
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 0 auto var(--spacing-md);
+		border: 3px solid var(--color-primary);
+	}
+
+	.team-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.team-name {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.team-role {
+		font-size: 1rem;
+		color: var(--color-primary);
+		font-weight: 500;
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.team-expertise {
+		font-size: 0.875rem;
+		color: var(--color-secondary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.team-bio {
+		font-size: 0.875rem;
+		color: var(--color-text-muted);
+		line-height: 1.6;
+	}
+
+	.timeline-section {
+		padding: var(--spacing-3xl) 0;
+	}
+
+	.timeline {
+		position: relative;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.timeline::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+		transform: translateX(-50%);
+	}
+
+	.timeline-item {
+		position: relative;
+		margin-bottom: var(--spacing-2xl);
+		display: flex;
+		align-items: center;
+	}
+
+	.timeline-item:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+
+	.timeline-marker {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80px;
+		height: 80px;
+		background: rgba(30, 41, 59, 0.9);
+		border: 3px solid var(--color-primary);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 1;
+	}
+
+	.timeline-year {
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: var(--color-primary);
+	}
+
+	.timeline-content {
+		width: 45%;
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		padding: var(--spacing-lg);
+		backdrop-filter: blur(8px);
+	}
+
+	.timeline-item:nth-child(even) .timeline-content {
+		text-align: right;
+	}
+
+	.timeline-title {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.timeline-description {
+		color: var(--color-text-muted);
+		line-height: 1.6;
+	}
+
+	.collaboration-section {
+		padding: var(--spacing-3xl) 0;
+	}
+
+	.collaboration-card {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		padding: var(--spacing-2xl);
+		text-align: center;
+		backdrop-filter: blur(8px);
+	}
+
+	.collaboration-card h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.collaboration-card p {
+		font-size: 1.125rem;
+		color: var(--color-text-muted);
+		line-height: 1.6;
+		margin-bottom: var(--spacing-lg);
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.collaboration-actions {
+		display: flex;
+		gap: var(--spacing-md);
+		justify-content: center;
+	}
+
+	@media (max-width: 1024px) {
+		.mission-grid {
+			grid-template-columns: 1fr;
+			gap: var(--spacing-2xl);
+		}
+
+		.mission-values {
+			grid-template-columns: 1fr;
+		}
+
+		.timeline::before {
+			left: 30px;
+		}
+
+		.timeline-marker {
+			left: 30px;
+		}
+
+		.timeline-item {
+			flex-direction: row !important;
+			margin-left: 60px;
+		}
+
+		.timeline-content {
+			width: 100%;
+			text-align: left !important;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.page-title {
+			font-size: 2rem;
+		}
+
+		.team-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.collaboration-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.timeline-item {
+			margin-left: 40px;
+		}
+
+		.timeline-marker {
+			left: 20px;
+			width: 60px;
+			height: 60px;
+		}
+
+		.timeline::before {
+			left: 20px;
+		}
+	}
+</style>
+</Layout>

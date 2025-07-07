@@ -1,0 +1,501 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const resourceCategories = [
+	{
+		title: "Essential Books",
+		icon: "📚",
+		resources: [
+			{
+				title: "The Network Society",
+				author: "Manuel Castells",
+				description: "A comprehensive analysis of how digital networks are transforming society.",
+				link: "#",
+				type: "book"
+			},
+			{
+				title: "Digital Sociology",
+				author: "Deborah Lupton",
+				description: "An introduction to the field of digital sociology and its methodologies.",
+				link: "#",
+				type: "book"
+			},
+			{
+				title: "The Social Media Revolution",
+				author: "Zygmunt Bauman",
+				description: "Examining the impact of social media on modern social structures.",
+				link: "#",
+				type: "book"
+			}
+		]
+	},
+	{
+		title: "Research Tools",
+		icon: "🔧",
+		resources: [
+			{
+				title: "R for Social Scientists",
+				author: "Various Contributors",
+				description: "Statistical computing environment for social research analysis.",
+				link: "#",
+				type: "tool"
+			},
+			{
+				title: "NVivo",
+				author: "QSR International",
+				description: "Qualitative data analysis software for researchers.",
+				link: "#",
+				type: "tool"
+			},
+			{
+				title: "Gephi",
+				author: "Gephi Consortium",
+				description: "Open-source network analysis and visualization software.",
+				link: "#",
+				type: "tool"
+			}
+		]
+	},
+	{
+		title: "Databases & Archives",
+		icon: "🗃️",
+		resources: [
+			{
+				title: "Social Science Research Network (SSRN)",
+				author: "Elsevier",
+				description: "Repository of scholarly research in social sciences.",
+				link: "#",
+				type: "database"
+			},
+			{
+				title: "Internet Archive",
+				author: "Internet Archive",
+				description: "Digital library of websites, books, and media.",
+				link: "#",
+				type: "database"
+			},
+			{
+				title: "Digital Society Index",
+				author: "Various Institutions",
+				description: "Comprehensive database of digital society indicators.",
+				link: "#",
+				type: "database"
+			}
+		]
+	},
+	{
+		title: "Journals & Publications",
+		icon: "📰",
+		resources: [
+			{
+				title: "New Media & Society",
+				author: "SAGE Publications",
+				description: "Leading journal on digital media and society research.",
+				link: "#",
+				type: "journal"
+			},
+			{
+				title: "Information, Communication & Society",
+				author: "Taylor & Francis",
+				description: "Interdisciplinary journal covering digital communication.",
+				link: "#",
+				type: "journal"
+			},
+			{
+				title: "The Information Society",
+				author: "Taylor & Francis",
+				description: "Research on the social aspects of information technology.",
+				link: "#",
+				type: "journal"
+			}
+		]
+	}
+];
+
+const featuredResources = [
+	{
+		title: "Digital Methods Initiative",
+		description: "Comprehensive toolkit for digital research methods and web data analysis.",
+		link: "#",
+		image: "https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=400"
+	},
+	{
+		title: "Computational Social Science",
+		description: "Online course materials for computational approaches to social research.",
+		link: "#",
+		image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400"
+	},
+	{
+		title: "Digital Humanities Toolkit",
+		description: "Collection of tools and resources for digital humanities research.",
+		link: "#",
+		image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400"
+	}
+];
+---
+
+<Layout title="Resources - Digital Sociology">
+	<Header />
+	<main>
+		<section class="page-header">
+			<div class="container">
+				<h1 class="page-title">Resources</h1>
+				<p class="page-subtitle">
+					Curated collection of books, tools, and databases for digital sociology research
+				</p>
+			</div>
+		</section>
+
+		<section class="featured-resources">
+			<div class="container">
+				<h2 class="section-title">Featured Resources</h2>
+				<div class="featured-grid">
+					{featuredResources.map((resource) => (
+						<div class="featured-card">
+							<div class="featured-image">
+								<img src={resource.image} alt={resource.title} />
+							</div>
+							<div class="featured-content">
+								<h3>{resource.title}</h3>
+								<p>{resource.description}</p>
+								<a href={resource.link} class="btn btn-primary">
+									Explore Resource
+								</a>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section class="resources-catalog">
+			<div class="container">
+				<h2 class="section-title">Resource Catalog</h2>
+				<div class="catalog-grid">
+					{resourceCategories.map((category) => (
+						<div class="category-section">
+							<div class="category-header">
+								<span class="category-icon">{category.icon}</span>
+								<h3 class="category-title">{category.title}</h3>
+							</div>
+							<div class="resources-list">
+								{category.resources.map((resource) => (
+									<div class="resource-item">
+										<div class="resource-info">
+											<h4 class="resource-title">{resource.title}</h4>
+											<p class="resource-author">by {resource.author}</p>
+											<p class="resource-description">{resource.description}</p>
+										</div>
+										<div class="resource-actions">
+											<span class="resource-type">{resource.type}</span>
+											<a href={resource.link} class="resource-link">
+												<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+													<path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+												</svg>
+											</a>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section class="resource-submission">
+			<div class="container">
+				<div class="submission-card">
+					<h2>Suggest a Resource</h2>
+					<p>
+						Know of a valuable resource that should be included in our collection? 
+						We welcome suggestions from the community to help expand our resource library.
+					</p>
+					<div class="submission-actions">
+						<a href="/contact" class="btn btn-primary">
+							Submit Resource
+						</a>
+						<a href="#" class="btn btn-secondary">
+							Resource Guidelines
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.page-header {
+		padding: calc(80px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+		text-align: center;
+		background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+	}
+
+	.page-title {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-md);
+		background: linear-gradient(45deg, var(--color-secondary), var(--color-accent));
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.page-subtitle {
+		font-size: 1.25rem;
+		color: var(--color-text-muted);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.featured-resources {
+		padding: var(--spacing-3xl) 0;
+	}
+
+	.featured-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-lg);
+	}
+
+	.featured-card {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		backdrop-filter: blur(8px);
+		transition: all 0.3s ease;
+	}
+
+	.featured-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-xl);
+		border-color: var(--color-primary);
+	}
+
+	.featured-image {
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.featured-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.featured-card:hover .featured-image img {
+		transform: scale(1.05);
+	}
+
+	.featured-content {
+		padding: var(--spacing-lg);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.featured-content h3 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-text);
+	}
+
+	.featured-content p {
+		color: var(--color-text-muted);
+		line-height: 1.6;
+		flex: 1;
+	}
+
+	.resources-catalog {
+		padding: var(--spacing-3xl) 0;
+		background: rgba(30, 41, 59, 0.3);
+	}
+
+	.catalog-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: var(--spacing-2xl);
+	}
+
+	.category-section {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		padding: var(--spacing-lg);
+		backdrop-filter: blur(8px);
+	}
+
+	.category-header {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-md);
+		margin-bottom: var(--spacing-lg);
+		padding-bottom: var(--spacing-md);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.category-icon {
+		font-size: 2rem;
+	}
+
+	.category-title {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-text);
+	}
+
+	.resources-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.resource-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: var(--spacing-md);
+		padding: var(--spacing-md);
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: var(--border-radius);
+		transition: all 0.2s ease;
+	}
+
+	.resource-item:hover {
+		background: rgba(255, 255, 255, 0.1);
+		transform: translateX(4px);
+	}
+
+	.resource-info {
+		flex: 1;
+	}
+
+	.resource-title {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.resource-author {
+		font-size: 0.875rem;
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.resource-description {
+		font-size: 0.875rem;
+		color: var(--color-text-muted);
+		line-height: 1.5;
+	}
+
+	.resource-actions {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: var(--spacing-sm);
+	}
+
+	.resource-type {
+		background: rgba(59, 130, 246, 0.2);
+		color: var(--color-primary);
+		padding: 2px 8px;
+		border-radius: 12px;
+		font-size: 0.75rem;
+		font-weight: 500;
+	}
+
+	.resource-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		background: var(--color-primary);
+		border-radius: 50%;
+		color: white;
+		text-decoration: none;
+		transition: all 0.2s ease;
+	}
+
+	.resource-link:hover {
+		background: var(--color-secondary);
+		transform: scale(1.1);
+	}
+
+	.resource-submission {
+		padding: var(--spacing-3xl) 0;
+	}
+
+	.submission-card {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		padding: var(--spacing-2xl);
+		text-align: center;
+		backdrop-filter: blur(8px);
+	}
+
+	.submission-card h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.submission-card p {
+		font-size: 1.125rem;
+		color: var(--color-text-muted);
+		line-height: 1.6;
+		margin-bottom: var(--spacing-lg);
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.submission-actions {
+		display: flex;
+		gap: var(--spacing-md);
+		justify-content: center;
+	}
+
+	@media (max-width: 1024px) {
+		.catalog-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.page-title {
+			font-size: 2rem;
+		}
+
+		.featured-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.resource-item {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.resource-actions {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.submission-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+</style>
+</Layout>

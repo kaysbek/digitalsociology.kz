@@ -1,0 +1,325 @@
+---
+---
+
+<section class="hero">
+	<div class="hero-background">
+		<div class="hero-gradient"></div>
+		<div class="hero-particles"></div>
+	</div>
+	
+	<div class="container">
+		<div class="hero-content">
+			<div class="hero-text">
+				<h1 class="hero-title">
+					Exploring the Digital
+					<span class="hero-accent">Transformation</span>
+					of Society
+				</h1>
+				<p class="hero-description">
+					Cutting-edge research at the intersection of technology and society. 
+					Discover how digital innovations are reshaping human interaction, 
+					culture, and social structures in the 21st century.
+				</p>
+				<div class="hero-actions">
+					<a href="/research" class="btn btn-primary">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+						</svg>
+						Explore Research
+					</a>
+					<a href="/about" class="btn btn-secondary">
+						Learn More
+					</a>
+				</div>
+			</div>
+			
+			<div class="hero-visual">
+				<div class="hero-card">
+					<div class="card-header">
+						<h3>Latest Research</h3>
+						<div class="card-badge">New</div>
+					</div>
+					<div class="card-content">
+						<h4>Digital Identity in Virtual Spaces</h4>
+						<p>Examining how individuals construct and maintain their identities in digital environments...</p>
+						<div class="card-stats">
+							<div class="stat">
+								<span class="stat-number">2.5K</span>
+								<span class="stat-label">Views</span>
+							</div>
+							<div class="stat">
+								<span class="stat-number">156</span>
+								<span class="stat-label">Citations</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hero-card hero-card-small">
+					<div class="mini-chart">
+						<div class="chart-bar" style="height: 60%"></div>
+						<div class="chart-bar" style="height: 80%"></div>
+						<div class="chart-bar" style="height: 45%"></div>
+						<div class="chart-bar" style="height: 90%"></div>
+						<div class="chart-bar" style="height: 75%"></div>
+					</div>
+					<p class="chart-label">Social Media Engagement</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		padding-top: 80px;
+		overflow: hidden;
+	}
+
+	.hero-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	.hero-gradient {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: 
+			radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+			radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+			radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.2) 0%, transparent 50%);
+	}
+
+	.hero-particles {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: 
+			radial-gradient(2px 2px at 20px 30px, rgba(59, 130, 246, 0.3), transparent),
+			radial-gradient(2px 2px at 40px 70px, rgba(139, 92, 246, 0.3), transparent),
+			radial-gradient(1px 1px at 90px 40px, rgba(236, 72, 153, 0.3), transparent);
+		background-size: 120px 120px;
+		animation: float 20s infinite linear;
+	}
+
+	@keyframes float {
+		0% { transform: translateY(0px); }
+		50% { transform: translateY(-10px); }
+		100% { transform: translateY(0px); }
+	}
+
+	.hero-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-3xl);
+		align-items: center;
+		min-height: 600px;
+	}
+
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-lg);
+	}
+
+	.hero-title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		line-height: 1.2;
+		color: var(--color-text);
+	}
+
+	.hero-accent {
+		background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.hero-description {
+		font-size: 1.25rem;
+		color: var(--color-text-muted);
+		line-height: 1.6;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: var(--spacing-md);
+		align-items: center;
+	}
+
+	.hero-visual {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hero-card {
+		background: rgba(30, 41, 59, 0.8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		padding: var(--spacing-lg);
+		backdrop-filter: blur(20px);
+		box-shadow: var(--shadow-xl);
+		animation: cardFloat 6s ease-in-out infinite;
+	}
+
+	.hero-card-small {
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		width: 200px;
+		padding: var(--spacing-md);
+		animation-delay: -3s;
+	}
+
+	@keyframes cardFloat {
+		0%, 100% { transform: translateY(0px); }
+		50% { transform: translateY(-10px); }
+	}
+
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.card-header h3 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--color-text);
+	}
+
+	.card-badge {
+		background: var(--color-primary);
+		color: white;
+		padding: 2px 8px;
+		border-radius: 12px;
+		font-size: 0.75rem;
+		font-weight: 500;
+	}
+
+	.card-content h4 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.card-content p {
+		color: var(--color-text-muted);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.card-stats {
+		display: flex;
+		gap: var(--spacing-lg);
+	}
+
+	.stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.stat-number {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--color-primary);
+	}
+
+	.stat-label {
+		font-size: 0.875rem;
+		color: var(--color-text-muted);
+	}
+
+	.mini-chart {
+		display: flex;
+		gap: 4px;
+		align-items: end;
+		height: 80px;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.chart-bar {
+		width: 20px;
+		background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+		border-radius: 2px;
+		animation: barGrow 2s ease-out infinite alternate;
+	}
+
+	.chart-bar:nth-child(2) { animation-delay: 0.2s; }
+	.chart-bar:nth-child(3) { animation-delay: 0.4s; }
+	.chart-bar:nth-child(4) { animation-delay: 0.6s; }
+	.chart-bar:nth-child(5) { animation-delay: 0.8s; }
+
+	@keyframes barGrow {
+		0% { opacity: 0.6; }
+		100% { opacity: 1; }
+	}
+
+	.chart-label {
+		font-size: 0.875rem;
+		color: var(--color-text-muted);
+		text-align: center;
+	}
+
+	@media (max-width: 1024px) {
+		.hero-content {
+			grid-template-columns: 1fr;
+			gap: var(--spacing-2xl);
+			text-align: center;
+		}
+
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-visual {
+			justify-content: center;
+		}
+
+		.hero-card-small {
+			position: static;
+			margin-top: var(--spacing-lg);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			min-height: 90vh;
+		}
+
+		.hero-title {
+			font-size: 2rem;
+		}
+
+		.hero-description {
+			font-size: 1.125rem;
+		}
+
+		.hero-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.btn {
+			justify-content: center;
+		}
+	}
+</style>
